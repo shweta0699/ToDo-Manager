@@ -1,0 +1,38 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Epilogue&family=Kumbh+Sans:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2 style="font-family: 'Kumbh Sans', sans-serif;">New Todo</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="title" style="font-family: 'Epilogue', sans-serif;">Title</label>
+                    <input type="text" name="title" class="form-control" id="title" required style="font-family: 'Epilogue', sans-serif;">
+                </div>
+                <div class="form-group">
+                    <label for="memo" style="font-family: 'Epilogue', sans-serif;">Memo</label>
+                    <textarea name="memo" class="form-control" id="memo" style="font-family: 'Epilogue', sans-serif;"></textarea>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" name="important" class="form-check-input" id="important" style="font-family: 'Epilogue', sans-serif;">
+                    <label class="form-check-label" for="important" style="font-family: 'Epilogue', sans-serif;">Important</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

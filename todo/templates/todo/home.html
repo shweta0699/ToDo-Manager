@@ -1,0 +1,21 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Epilogue&family=Kumbh+Sans:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+
+<div class="container container-fluid" align="center" style="padding-top:150px;">
+	<h1 style="font-family: 'Kumbh Sans', sans-serif;">Here is your ToDo Manager!</h1><br>
+	<p style="font-family: 'Epilogue', sans-serif;">Life is fun. But life is also busy. Each day, there are million things that you could be doing. 
+	But what matters is what you do.</p>
+	<p style="font-family: 'Epilogue', sans-serif;"> So, here is <b>ToDo Manager</b> to ease things up for you. You can add, delete,
+	update, and of course, see your todo list by just a click.</p>
+	<p style="font-family: 'Epilogue', sans-serif;"> So get ready and make your todo list and make way for an easy life! </p>
+	
+	<div align="center">
+		<a class="btn btn-primary" href="{% url 'signupuser' %}"> Get Started </a>
+	</div>
+</div>
+
+{% endblock %}
